@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.info__container,
+.brands__container,
+.plans__container,
+.quote__container,
+.footer__container {
+    box-sizing: content-box;
+    max-width: 1180px;
+    margin: 0px auto;
+    padding: 0px 15px; /* отступы безопасности */
+}
+
+
+
