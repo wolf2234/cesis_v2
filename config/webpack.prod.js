@@ -1,16 +1,16 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin' ;
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 
-import * as path from 'path';
+import * as path from "path";
 
 const srcFolder = "src";
 const builFolder = "dist";
 
 const paths = {
     src: path.resolve(srcFolder),
-    build: path.resolve(builFolder)
-}
+    build: path.resolve(builFolder),
+};
 
 const config = {
     mode: "production",
@@ -20,8 +20,8 @@ const config = {
     },
     output: {
         path: `${paths.build}`,
-        filename: 'app.min.js',
-        publicPath: '/',
+        filename: "app.min.js",
+        publicPath: "/",
     },
     module: {
         rules: [
@@ -30,14 +30,17 @@ const config = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
-                        loader: 'css-loader',
+                        loader: "css-loader",
                         options: {
                             importLoaders: 0,
                             sourceMap: false,
                             modules: false,
                             url: {
                                 filter: (url, resourcePath) => {
-                                    if (url.includes("img") || url.includes("fonts")) {
+                                    if (
+                                        url.includes("img") ||
+                                        url.includes("fonts")
+                                    ) {
                                         return false;
                                     }
                                     return true;
@@ -46,12 +49,12 @@ const config = {
                         },
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: "sass-loader",
                         options: {
                             sassOptions: {
                                 outputStyle: "expanded",
                             },
-                        }
+                        },
                     },
                 ],
             },
@@ -59,28 +62,27 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '../css/style.css',
+            filename: "../css/style.css",
         }),
         new CopyPlugin({
             patterns: [
                 {
-                    from: `${paths.src}/files`, to: `../files`,
-                    noErrorOnMissing: true
-                }
+                    from: `${paths.src}/files`,
+                    to: `../files`,
+                    noErrorOnMissing: true,
+                },
             ],
         }),
     ],
     resolve: {
         alias: {
-            "SCSS": `${paths.src}/scss`,
-            "JS": `${paths.src}/js`,
+            SCSS: `${paths.src}/scss`,
+            JS: `${paths.src}/js`,
         },
     },
-}
+};
 export default config;
 
 /* 
 ОТКЛЮЧИТЬ работу с ассетами картинки + шрифты
 */
-
-

@@ -1,31 +1,29 @@
-import FileIncludeWebpackPlugin from 'file-include-webpack-plugin';
+import FileIncludeWebpackPlugin from "file-include-webpack-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 
-import * as path from 'path';
+import * as path from "path";
 
 const srcFolder = "src";
 const builFolder = "dist";
 
 const paths = {
     src: path.resolve(srcFolder),
-    build: path.resolve(builFolder)
-}
+    build: path.resolve(builFolder),
+};
 
 const config = {
     mode: "development",
-    devtool: 'inline-source-map',
+    devtool: "inline-source-map",
     optimization: {
-        minimize: false
+        minimize: false,
     },
 
-    entry: [
-        `${paths.src}/js/app.js`
-    ],
+    entry: [`${paths.src}/js/app.js`],
 
     output: {
         path: `${paths.build}`,
-        filename: 'js/app.min.js',
-        publicPath: '/'
+        filename: "js/app.min.js",
+        publicPath: "/",
     },
 
     devServer: {
@@ -36,8 +34,8 @@ const config = {
         hot: false,
         port: 8080,
         devMiddleware: {
-            writeToDisk: true
-        }
+            writeToDisk: true,
+        },
     },
 
     module: {
@@ -46,16 +44,19 @@ const config = {
                 test: /\.(scss|css)$/,
                 exclude: `${paths.src}/fonts`,
                 use: [
-                    'style-loader',
+                    "style-loader",
                     {
-                        loader: 'css-loader',
+                        loader: "css-loader",
                         options: {
                             sourceMap: true,
                             importLoaders: 1,
                             modules: false,
                             url: {
                                 filter: (url, resourcePath) => {
-                                    if (url.includes("img/") || url.includes("fonts/")) {
+                                    if (
+                                        url.includes("img/") ||
+                                        url.includes("fonts/")
+                                    ) {
                                         return false;
                                     }
                                     return true;
@@ -64,10 +65,10 @@ const config = {
                         },
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: "sass-loader",
                         options: {
                             sourceMap: true,
-                        }
+                        },
                     },
                 ],
             },
@@ -78,36 +79,37 @@ const config = {
             source: srcFolder,
             htmlBeautifyOptions: {
                 "indent-with-tabs": true,
-                'indent_size': 3
+                indent_size: 3,
             },
-            replace: [{
-                regex: '<link rel="stylesheet" href="css/style.min.css">',
-                to: '',
-            }],
+            replace: [
+                {
+                    regex: '<link rel="stylesheet" href="css/style.min.css">',
+                    to: "",
+                },
+            ],
         }),
         new CopyPlugin({
             patterns: [
                 {
-                    from: `${srcFolder}/img`, to: `img`,
+                    from: `${srcFolder}/img`,
+                    to: `img`,
                     noErrorOnMissing: true,
-                    force: true
-                    
-                }, {
-                    from: `${srcFolder}/files`, to: `files`,
+                    force: true,
+                },
+                {
+                    from: `${srcFolder}/files`,
+                    to: `files`,
                     noErrorOnMissing: true,
-                    force: true
-                }
+                    force: true,
+                },
             ],
         }),
     ],
     resolve: {
         alias: {
-            "SCSS": `${path.src}/scss`,
-            "JS": `${path.src}/js`
+            SCSS: `${path.src}/scss`,
+            JS: `${path.src}/js`,
         },
     },
-}
+};
 export default config;
-
-
-
