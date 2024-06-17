@@ -44,7 +44,6 @@ export function hoverElement(block, hoverTag, HoverElement) {
     const parentElement = document.querySelector(block);
     const hoverTags = parentElement.querySelectorAll(hoverTag);
     const HoverElements = parentElement.querySelectorAll(HoverElement);
-
     hover(hoverTags, HoverElements, "mouseover");
     hover(hoverTags, HoverElements, "mouseout");
 }
