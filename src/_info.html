@@ -6,13 +6,15 @@
         </p>
         <div class="info__nav">
             <div class="info__links">
-                <a href="#" class="info__link" data-info-attr="1">Services</a>
-                <a href="#" class="info__link" data-info-attr="2">About cesis</a>
-                <a href="#" class="info__link" data-info-attr="3">Purchase now</a>
+                <a href="#" class="info__link" data-link-block="1">Services</a>
+                <a href="#" class="info__link" data-link-block="2">About cesis</a>
+                <a href="#" class="info__link" data-link-block="3">Purchase now</a>
             </div>
         </div>
         <div class="info__content">
-            @@include('_services.html', {})
+            <div class="info__item" data-link-block="1">
+                @@include('_services.html', {})
+            </div>
         </div>
     </div>
 </div>
