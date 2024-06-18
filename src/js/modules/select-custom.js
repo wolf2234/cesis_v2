@@ -2,9 +2,9 @@ export function createCustomSelect(selectClass) {
     let selectBlock = document.querySelector(selectClass);
 
     const selectClassCustom = "select-custom";
-    const selectClassCustomValue = "select-custom__value";
-    const selectClassCustomItems = "select-custom__items";
-    const selectClassCustomItem = "select-custom__item";
+    const selectClassCustomValue = `${selectClassCustom}__value`;
+    const selectClassCustomItems = `${selectClassCustom}__items`;
+    const selectClassCustomItem = `${selectClassCustom}__item`;
 
     let selectCustom = document.createElement("div");
     let selectItems = document.createElement("div");
@@ -13,10 +13,10 @@ export function createCustomSelect(selectClass) {
     selectItems.className = selectClassCustomItems;
 
     selectCustom.innerHTML = `
-            <div class="select-custom__body">
-                <div class="select-custom__current">
-                    <div class="select-custom__value"></div>
-                    <span class="select-custom__icon"></span>
+            <div class="${selectClassCustom}__body">
+                <div class="${selectClassCustom}__current">
+                    <div class="${selectClassCustomValue}"></div>
+                    <span class="${selectClassCustom}__icon"></span>
                 </div>
             </div>`;
 
