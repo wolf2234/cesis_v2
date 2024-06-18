@@ -4,6 +4,7 @@
 @import "base/base";
 @import "base/mixins";
 @import "base/fonts";
+@import "modules/select-custom";
 
 // $fontFamily: "Roboto";
 // $fontSize: rem(20);
@@ -2169,11 +2170,9 @@ body {
     }
 }
 
-.select {
+.select-custom {
     position: relative;
-    max-width: 500px;
     height: auto;
-    overflow: hidden;
     transition: 0.3s all ease;
     z-index: 5;
 
@@ -2184,61 +2183,41 @@ body {
         max-width: 100%;
     }
 
-    &__body {
-        position: relative;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        z-index: 3;
-
-        &::after {
-            display: inline-block;
-            position: absolute;
-            content: "";
-            top: 35%;
-            right: 20px;
-            background-image: url("../img/main/quote/check.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-position: center;
-            width: 10px;
-            height: 5px;
-            z-index: 4;
-        }
-    }
-
     &__current {
-        line-height: 24px;
         padding: 20px 25px;
-        font-size: 13px;
         color: #7f8081;
-        width: 100%;
         background-color: transparent;
         border: 1px solid #434957;
         outline: none;
         border-radius: 5px;
         margin-bottom: 20px;
-        font-weight: 300;
         font-family: "OpenSans", sans-serif;
     }
 
+    &__icon {
+        border: none;
+        border-width: 0px;
+        padding: 0px;
+        margin: 0px;
+        background-image: url("../img/main/quote/check.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        transform: rotate(0deg);
+        width: 10px;
+        height: 5px;
+    }
+
     &__items {
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        width: 100%;
         background-color: transparent;
         border: 1px solid #434957;
         border-top: 0px;
         color: #7f8081;
         font-weight: 300;
         font-family: "OpenSans", sans-serif;
-        z-index: 6;
     }
 
     &__item {
-        cursor: pointer;
-        font-size: 13px;
         padding: 8px 25px;
         line-height: 24px;
     }
@@ -2248,19 +2227,12 @@ body {
             background-color: #c7c4c4;
         }
     }
-
-    &.is-active {
-        overflow: visible;
-    }
-
     &.is-active &__items {
-        top: 77%;
-        background-color: #fff;
+        top: 73%;
     }
-    &.is-active .select__body {
-        &::after {
-            transform: scaleY(-1);
-        }
+    &.is-active &__icon {
+        margin: 0px;
+        transform: scaleY(-1);
     }
 }
 
