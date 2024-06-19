@@ -5,18 +5,16 @@ export function createCustomSelect(selectClass) {
 
     let selectCustom = createSelectCustom(className);
     let selectBody = createSelectBody(className);
-    let selectCurrent = createSelectCurrent(className);
     let selectValue = createSelectValue(selectBlock, className);
     let selectIcon = createSelectIcon(className);
     let selectItems = createSelectItems(selectBlock, className);
 
     const blocks = {
-        0: [selectCurrent, "afterbegin", selectValue],
-        1: [selectCurrent, "beforeend", selectIcon],
-        2: [selectBody, "afterbegin", selectCurrent],
-        3: [selectCustom, "afterbegin", selectBody],
-        4: [selectCustom, "beforeend", selectItems],
-        5: [selectBlock, "afterend", selectCustom],
+        0: [selectBody, "afterbegin", selectValue],
+        1: [selectBody, "beforeend", selectIcon],
+        2: [selectCustom, "afterbegin", selectBody],
+        3: [selectCustom, "beforeend", selectItems],
+        4: [selectBlock, "afterend", selectCustom],
     };
 
     appendElements(blocks);
@@ -85,6 +83,7 @@ export function showItems(select, className) {
     const items = select
         .querySelector(`.${className}__items`)
         .querySelectorAll(`.${className}__item`);
+
     items.forEach(function (item) {
         item.addEventListener("click", function (element) {
             let text = item.innerText;
