@@ -747,79 +747,72 @@ body {
     &__items {
         position: relative;
         display: flex;
+        gap: 0px 18%;
+        padding: 50px 160px;
         z-index: 6;
-        padding: 0px 160px;
 
         @media (max-width: 1600px) {
-            position: relative;
-            display: flex;
-            z-index: 6;
-            padding: 0px 50px;
+            padding: 50px 10px;
+            column-gap: 15%;
         }
-        @media (max-width: 1490px) {
-            padding: 0px 10px;
+        @media (max-width: 1130px) {
+            column-gap: 9%;
+        }
+        @media (max-width: 1050px) {
+            flex-direction: column;
+            row-gap: 50px;
+        }
+        @media (max-width: 950px) {
+            column-gap: 5%;
         }
         @media (max-width: 760px) {
             flex-direction: column;
-            padding: 0px 15px;
-            row-gap: 0px;
         }
     }
     &__item {
         position: relative;
         display: flex;
-        padding: 100px 0px 60px 0px;
-        min-width: 450px;
-
+        height: 100%;
         @media (max-width: 1600px) {
-            position: relative;
-            display: flex;
-            padding: 100px 0px 60px 0px;
-            min-width: 450px;
         }
-        @media (max-width: 1490px) {
-            min-width: 300px;
+        @media (max-width: 1050px) {
+            width: 100%;
+            justify-content: center;
         }
         @media (max-width: 760px) {
-            width: 100%;
-            padding: 25px 0px 0px;
         }
 
         &:last-of-type {
+            max-width: 500px;
+            @media (max-width: 1050px) {
+                padding: 0px 0px 0px 30px;
+                max-width: 100%;
+            }
             @media (max-width: 760px) {
-                left: 0px;
+                padding: 0px;
             }
         }
     }
     &__image {
-        width: 750px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 700px;
         z-index: 10;
 
         @media (max-width: 1300px) {
-            width: 550px;
         }
         @media (max-width: 1200px) {
-            width: 480px;
         }
         @media (max-width: 1130px) {
-            width: 450px;
-            height: 580px;
         }
-        @media (max-width: 1035px) {
-            width: 450px;
-            height: 580px;
+        @media (max-width: 1050px) {
         }
         @media (max-width: 950px) {
-            width: 390px;
-            height: 490px;
         }
         @media (max-width: 870px) {
-            width: 370px;
-            height: 460px;
         }
         @media (max-width: 850px) {
-            width: 330px;
-            height: 460px;
         }
         @media (max-width: 760px) {
             width: 100%;
@@ -828,80 +821,51 @@ body {
     }
     &__img {
         position: absolute;
-        left: 65px;
-        bottom: 40px;
-        width: 270px;
-        height: 520px;
+        right: -20%;
+        bottom: -3%;
         z-index: 10;
+        width: 40%;
+        height: 80%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
 
         @media (max-width: 1600px) {
-            bottom: 50px;
-            width: 220px;
-            height: 420px;
-            left: 130px;
-            bottom: 45px;
         }
         @media (max-width: 1490px) {
-            bottom: 40px;
-            left: 0px;
-            width: 230px;
         }
         @media (max-width: 1370px) {
-            left: 40px;
         }
         @media (max-width: 1300px) {
-            bottom: 50px;
-            left: 100px;
-            width: 170px;
-            height: 320px;
         }
         @media (max-width: 1200px) {
-            bottom: 50px;
-            left: 70px;
-            width: 160px;
-            height: 300px;
         }
         @media (max-width: 1130px) {
-            bottom: 125px;
-            left: 50px;
-            width: 170px;
-            height: 350px;
         }
-        @media (max-width: 1035px) {
-            bottom: 215px;
-            left: 50px;
-            width: 170px;
-            height: 350px;
+        @media (max-width: 1050px) {
+            width: 25%;
+            height: 70%;
+            right: 5%;
         }
         @media (max-width: 950px) {
-            bottom: 142px;
-            left: 8px;
-            width: 150px;
-            height: 300px;
+            right: 0%;
         }
         @media (max-width: 870px) {
-            bottom: 200px;
-            left: -10px;
-            width: 130px;
-            height: 280px;
+            width: 30%;
+            height: 70%;
+            right: 0%;
         }
         @media (max-width: 850px) {
-            bottom: 280px;
-            left: -50px;
-            width: 130px;
-            height: 280px;
+            right: -3%;
         }
         @media (max-width: 760px) {
-            top: -735%;
-            right: -4.5%;
-            left: auto;
-            width: 100px;
-            height: 190px;
+            right: -3%;
+            bottom: -3%;
         }
     }
     &__content {
-        width: 90%;
-
         @media (max-width: 1600px) {
             width: 100%;
         }
@@ -921,9 +885,6 @@ body {
         font-weight: 700;
         font-family: "Montserrat", sans-serif;
 
-        @media (max-width: 1035px) {
-            font-size: 10px;
-        }
         @media (max-width: 760px) {
             font-size: 12px;
         }
@@ -954,19 +915,13 @@ body {
         font-weight: 700;
         font-family: "Montserrat", sans-serif;
 
-        @media (max-width: 1490px) {
-            font-size: 20px;
-        }
-        @media (max-width: 1035px) {
-            font-size: 20px;
-        }
         @media (max-width: 760px) {
             font-size: 30px;
         }
     }
 
     &__text-medium {
-        font-size: 24px;
+        font-size: 18px;
         color: #fff;
         margin-bottom: 22px;
         line-height: 40px;
@@ -974,12 +929,10 @@ body {
         font-family: "OpenSans", sans-serif;
 
         @media (max-width: 1490px) {
-            font-size: 14px;
             margin-bottom: 20px;
             line-height: 30px;
         }
         @media (max-width: 1035px) {
-            font-size: 14px;
             line-height: 30px;
         }
         @media (max-width: 760px) {
@@ -996,12 +949,10 @@ body {
         font-family: "OpenSans", sans-serif;
 
         @media (max-width: 1490px) {
-            font-size: 14px;
             line-height: 30px;
             margin-bottom: 30px;
         }
         @media (max-width: 1035px) {
-            font-size: 12px;
             line-height: 25px;
             margin-bottom: 50px;
         }
@@ -1046,7 +997,6 @@ body {
     }
     &:last-of-type {
         @media (max-width: 822px) {
-            left: -55px;
         }
     }
 }
