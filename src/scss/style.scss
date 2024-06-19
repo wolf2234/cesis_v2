@@ -1094,9 +1094,15 @@ body {
             flex-direction: column;
         }
     }
+    &__item {
+        img {
+            background: #000;
+        }
+    }
     &__image {
         position: relative;
         z-index: 6;
+        background-color: #000;
 
         &:hover {
             background: linear-gradient(
