@@ -1,3 +1,3 @@
 import { hoverElement } from "../modules/functions.js";
 
-hoverElement(".services", ".services__icon", ".services__title");
+hoverElement(".services__icon", ".services__title");

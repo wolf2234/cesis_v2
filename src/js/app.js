@@ -8,7 +8,11 @@ import "./jquery/slider.js";
 import "./base/burger.js";
 import "./base/service.js";
 import "./base/form.js";
-import "./base/info.js";
 import "./base/plans.js";
 import "./base/video.js";
-import "./base/select.js";
+
+import { showBlock } from "./modules/functions.js";
+import { enableCustomSelect } from "./modules/select-custom.js";
+
+showBlock(1);
+enableCustomSelect();

@@ -1,25 +1,28 @@
-export function showBlock(parent, link, block, defaultValue = 0) {
-    const parentElement = document.querySelector(parent);
-    const childlinks = parentElement.querySelectorAll(link);
-    const childblocks = parentElement.querySelectorAll(block);
+export function showBlock(defaultValue = 0) {
+    let parentElements = document.querySelectorAll("[data-block-parent]");
 
-    if (defaultValue) {
-        addActiveByDefault(childlinks, defaultValue);
-        addActiveByDefault(childblocks, defaultValue);
-    }
+    parentElements.forEach(function (parentElement) {
+        const childlinks = parentElement.querySelectorAll("[data-block-link]");
+        const childblocks = parentElement.querySelectorAll("[data-block-item]");
 
-    childlinks.forEach(function (childlink) {
-        childlink.addEventListener("click", function (element) {
-            removeActives(childlinks);
-            removeActives(childblocks);
+        if (defaultValue) {
+            addActiveByDefault(childlinks, defaultValue);
+            addActiveByDefault(childblocks, defaultValue);
+        }
 
-            let attrElement = childlink.dataset.linkBlock;
-            childlink.classList.add("active");
-            childblocks.forEach(function (childblock) {
-                let attrBlock = childblock.dataset.linkBlock;
-                if (attrBlock === attrElement) {
-                    childblock.classList.add("active");
-                }
+        childlinks.forEach(function (childlink) {
+            childlink.addEventListener("click", function (element) {
+                removeActives(childlinks);
+                removeActives(childblocks);
+
+                let attrElement = childlink.dataset.blockLink;
+                childlink.classList.add("active");
+                childblocks.forEach(function (childblock) {
+                    let attrBlock = childblock.dataset.blockItem;
+                    if (attrBlock === attrElement) {
+                        childblock.classList.add("active");
+                    }
+                });
             });
         });
     });
@@ -27,7 +30,12 @@ export function showBlock(parent, link, block, defaultValue = 0) {
 
 export function addActiveByDefault(elements, defaultValue) {
     elements.forEach(function (element) {
-        let attrElement = element.dataset.linkBlock;
+        let attrElement;
+        if (element.hasAttribute("data-block-link")) {
+            attrElement = element.dataset.blockLink;
+        } else if (element.hasAttribute("data-block-item")) {
+            attrElement = element.dataset.blockItem;
+        }
         if (attrElement == defaultValue) {
             element.classList.add("active");
         }
@@ -41,11 +49,14 @@ export function removeActives(elements) {
 }
 
 export function hoverElement(block, hoverTag, HoverElement) {
-    const parentElement = document.querySelector(block);
-    const hoverTags = parentElement.querySelectorAll(hoverTag);
-    const HoverElements = parentElement.querySelectorAll(HoverElement);
-    hover(hoverTags, HoverElements, "mouseover");
-    hover(hoverTags, HoverElements, "mouseout");
+    const blocks = document.querySelectorAll("[data-hover-block]");
+
+    blocks.forEach(function (block) {
+        const hoverTags = block.querySelectorAll(hoverTag);
+        const HoverElements = block.querySelectorAll(HoverElement);
+        hover(hoverTags, HoverElements, "mouseover");
+        hover(hoverTags, HoverElements, "mouseout");
+    });
 }
 
 export function hover(tags, elements, event) {

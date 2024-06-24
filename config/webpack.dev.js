@@ -21,7 +21,7 @@ const config = {
     entry: [`${paths.src}/js/app.js`],
 
     output: {
-        path: `${paths.build}`,
+        path: paths.build,
         filename: "js/app.min.js",
         publicPath: "/",
     },
@@ -76,7 +76,8 @@ const config = {
     },
     plugins: [
         new FileIncludeWebpackPlugin({
-            source: srcFolder,
+            // source: srcFolder,
+            source: `${srcFolder}/html/home`,
             htmlBeautifyOptions: {
                 "indent-with-tabs": true,
                 indent_size: 3,

@@ -1,27 +1,27 @@
-export function createCustomSelect(selectClass) {
-    let selectBlock = document.querySelector(selectClass);
-
+export function enableCustomSelect() {
+    let selectBlocks = document.querySelectorAll("select[data-custom-select]");
     const className = "select-custom";
+    selectBlocks.forEach(function (selectBlock) {
+        let selectCustom = createSelectCustom(className);
+        let selectBody = createSelectBody(className);
+        let selectValue = createSelectValue(selectBlock, className);
+        let selectIcon = createSelectIcon(className);
+        let selectItems = createSelectItems(selectBlock, className);
 
-    let selectCustom = createSelectCustom(className);
-    let selectBody = createSelectBody(className);
-    let selectValue = createSelectValue(selectBlock, className);
-    let selectIcon = createSelectIcon(className);
-    let selectItems = createSelectItems(selectBlock, className);
+        const blocks = {
+            0: [selectBody, "afterbegin", selectValue],
+            1: [selectBody, "beforeend", selectIcon],
+            2: [selectCustom, "afterbegin", selectBody],
+            3: [selectCustom, "beforeend", selectItems],
+            4: [selectBlock, "afterend", selectCustom],
+        };
 
-    const blocks = {
-        0: [selectBody, "afterbegin", selectValue],
-        1: [selectBody, "beforeend", selectIcon],
-        2: [selectCustom, "afterbegin", selectBody],
-        3: [selectCustom, "beforeend", selectItems],
-        4: [selectBlock, "afterend", selectCustom],
-    };
+        appendElements(blocks);
+        selectBlock.style.display = "none";
 
-    appendElements(blocks);
-    selectBlock.style.display = "none";
-
-    addActive(selectCustom);
-    showItems(selectCustom, className);
+        addActive(selectCustom);
+        showItems(selectCustom, className);
+    });
 }
 
 export function createSelectCustom(className) {
