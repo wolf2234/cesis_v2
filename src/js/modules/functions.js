@@ -48,31 +48,31 @@ export function removeActives(elements) {
     });
 }
 
-export function hoverElement(block, hoverTag, HoverElement) {
+export function hoverElement() {
     const blocks = document.querySelectorAll("[data-hover-block]");
-
     blocks.forEach(function (block) {
-        const hoverTags = block.querySelectorAll(hoverTag);
-        const HoverElements = block.querySelectorAll(HoverElement);
-        hover(hoverTags, HoverElements, "mouseover");
-        hover(hoverTags, HoverElements, "mouseout");
+        const hoverTags = block.querySelectorAll("[data-hover-attr]");
+        hoverTags.forEach(function (hoverTag) {
+            hover(hoverTags, hoverTag);
+        });
     });
 }
 
-export function hover(tags, elements, event) {
+export function hover(tags, currentTag) {
+    let attrTag = currentTag.dataset.hoverAttr;
     tags.forEach(function (tag) {
-        tag.addEventListener(event, function () {
-            let tagAttr = tag.dataset.hoverAttr;
-            elements.forEach(function (element) {
-                let elementAttr = element.dataset.hoverAttr;
-                if (elementAttr == tagAttr) {
-                    if (event == "mouseover") {
-                        element.classList.add("active");
-                    } else if (event == "mouseout") {
-                        element.classList.remove("active");
-                    }
-                }
-            });
-        });
+        if (attrTag == tag.dataset.hoverAttr) {
+            if (tag.classList.contains("active")) {
+            } else {
+                tag.addEventListener("mouseover", function () {
+                    tag.classList.add("active");
+                    currentTag.classList.add("active");
+                });
+                tag.addEventListener("mouseout", function () {
+                    tag.classList.remove("active");
+                    currentTag.classList.remove("active");
+                });
+            }
+        }
     });
 }

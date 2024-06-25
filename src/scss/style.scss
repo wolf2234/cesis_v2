@@ -696,6 +696,7 @@ body {
     }
 
     &__title {
+        display: inline-block;
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 20px;
