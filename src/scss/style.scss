@@ -346,10 +346,10 @@ body {
     z-index: 3;
 
     @media (max-width: 1670px) {
-        top: 0px;
+        top: 20px;
     }
     @media (max-width: 1035px) {
-        top: 0px;
+        top: 50px;
     }
     @media (max-width: 760px) {
         top: 60px;
@@ -359,14 +359,42 @@ body {
     &__item {
         background-image: url("../img/main/slider/Image.jpg");
         background-size: 100% 100%;
+        background-position: center;
         background-repeat: no-repeat;
         position: relative;
-        width: 400px;
+        width: 100%;
         height: 900px;
         z-index: 40;
 
+        @media (max-width: 1400px) {
+            height: 700px;
+        }
+        @media (max-width: 1150px) {
+            height: 650px;
+        }
+        @media (max-width: 1050px) {
+            height: 550px;
+        }
+        @media (max-width: 950px) {
+            height: 500px;
+        }
+        @media (max-width: 850px) {
+            height: 450px;
+        }
         @media (max-width: 760px) {
+            height: 420px;
+        }
+        @media (max-width: 650px) {
             height: 320px;
+        }
+        @media (max-width: 500px) {
+            height: 290px;
+        }
+        @media (max-width: 450px) {
+            height: 250px;
+        }
+        @media (max-width: 370px) {
+            height: 230px;
         }
     }
 
@@ -378,9 +406,15 @@ body {
         flex-direction: column;
         align-items: center;
 
+        @media (max-width: 1050px) {
+            top: 40%;
+        }
         @media (max-width: 760px) {
-            top: 15%;
+            top: 35%;
             text-align: center;
+        }
+        @media (max-width: 650px) {
+            top: 30%;
         }
     }
 
@@ -403,15 +437,31 @@ body {
         letter-spacing: 10px;
         word-spacing: -20px;
 
-        @media (max-width: 1130px) {
+        @media (max-width: 1600px) {
             font-size: 50px;
         }
-        @media (max-width: 760px) {
+        @media (max-width: 1400px) {
+            font-size: 40px;
+            word-spacing: -5px;
+        }
+        @media (max-width: 1150px) {
+            font-size: 40px;
+        }
+        @media (max-width: 1050px) {
             font-size: 30px;
+        }
+        @media (max-width: 760px) {
+            font-size: 25px;
             letter-spacing: 3px;
             word-spacing: 0px;
             margin-bottom: 10px;
             line-height: 40px;
+        }
+        @media (max-width: 500px) {
+            letter-spacing: 2px;
+            font-size: 20px;
+            margin-bottom: 5px;
+            line-height: 30px;
         }
     }
 
@@ -423,14 +473,34 @@ body {
         text-transform: uppercase;
         letter-spacing: 10px;
 
-        @media (max-width: 1130px) {
-            font-size: 12px;
+        @media (max-width: 1600px) {
+            letter-spacing: 8px;
+            font-size: 11px;
+        }
+        @media (max-width: 1400px) {
+            letter-spacing: 5px;
+        }
+
+        @media (max-width: 1150px) {
+        }
+        @media (max-width: 1050px) {
+            font-size: 10px;
         }
         @media (max-width: 760px) {
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 2px;
             line-height: 20px;
             margin-bottom: 30px;
+        }
+        @media (max-width: 650px) {
+            font-size: 8px;
+            line-height: 10px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 500px) {
+        }
+        @media (max-width: 450px) {
+            top: 20%;
         }
     }
 
@@ -447,6 +517,14 @@ body {
         @media (max-width: 760px) {
             padding: 15px 30px;
             font-size: 14px;
+        }
+        @media (max-width: 650px) {
+            font-size: 12px;
+            padding: 10px 20px;
+        }
+        @media (max-width: 500px) {
+        }
+        @media (max-width: 450px) {
         }
     }
 
@@ -478,7 +556,20 @@ body {
         width: 100%;
 
         @media (max-width: 760px) {
-            top: 86%;
+            top: 112%;
+        }
+        @media (max-width: 650px) {
+            top: 80%;
+        }
+        @media (max-width: 500px) {
+            top: 75%;
+        }
+        @media (max-width: 450px) {
+            top: 65%;
+        }
+        @media (max-width: 370px) {
+            gap: 6px;
+            top: 60%;
         }
     }
 
@@ -496,6 +587,16 @@ body {
         @media (max-width: 760px) {
             width: 12px;
             height: 12px;
+        }
+        @media (max-width: 650px) {
+        }
+        @media (max-width: 500px) {
+        }
+        @media (max-width: 450px) {
+        }
+        @media (max-width: 370px) {
+            width: 10px;
+            height: 10px;
         }
     }
 
@@ -515,13 +616,28 @@ body {
     z-index: 3;
 
     @media (max-width: 1670px) {
-        padding-top: 0px;
     }
 
     @media (max-width: 760px) {
         display: block;
-        top: 60px;
-        padding: 30px 0px 90px;
+        padding: 130px 0px;
+    }
+    @media (max-width: 650px) {
+        padding: 20px 0px 130px;
+    }
+    @media (max-width: 560px) {
+        padding: 15px 0px 130px;
+    }
+    @media (max-width: 500px) {
+        padding: 0px 0px 130px;
+    }
+    @media (max-width: 450px) {
+        top: 0px;
+        padding: 30px 0px 30px;
+    }
+    @media (max-width: 370px) {
+        top: 0px;
+        padding: 0px 0px 30px;
     }
 
     &__text {
@@ -783,6 +899,7 @@ body {
         }
         @media (max-width: 760px) {
             flex-direction: column;
+            padding-bottom: 0px;
         }
     }
     &__item {
@@ -1034,6 +1151,9 @@ body {
     align-items: center;
     background-color: #6b53ff;
 
+    @media (max-width: 760px) {
+    }
+
     &__body {
         display: flex;
         align-items: center;
@@ -1057,6 +1177,9 @@ body {
 
 .brands {
     position: relative;
+
+    @media (max-width: 760px) {
+    }
 
     &__body {
         position: relative;
@@ -1153,6 +1276,9 @@ body {
     width: 100%;
     z-index: 3;
     padding: 50px 0px;
+
+    @media (max-width: 760px) {
+    }
 
     &__items {
         display: flex;
@@ -2229,6 +2355,7 @@ body {
         display: block;
         height: 100%;
         z-index: 3;
+        padding-top: 30px;
     }
 
     &__body {
