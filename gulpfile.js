@@ -36,7 +36,7 @@ const path = {
         fonts: `${projectName}/fonts/`,
     },
     src: {
-        html: [`${srcFolder}/**/*.html`, `!${srcFolder}/**/_*.html`],
+        html: [`${srcFolder}/**/*.html`, `!${srcFolder}/_*.html`],
         js: [`${srcFolder}/js/app.js`],
         css: `${srcFolder}/scss/style.scss`,
         images: [
