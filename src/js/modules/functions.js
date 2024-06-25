@@ -62,8 +62,7 @@ export function hover(tags, currentTag) {
     let attrTag = currentTag.dataset.hoverAttr;
     tags.forEach(function (tag) {
         if (attrTag == tag.dataset.hoverAttr) {
-            if (tag.classList.contains("active")) {
-            } else {
+            if (!tag.classList.contains("active")) {
                 tag.addEventListener("mouseover", function () {
                     tag.classList.add("active");
                     currentTag.classList.add("active");
