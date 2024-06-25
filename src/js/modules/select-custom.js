@@ -21,6 +21,21 @@ export function enableCustomSelect() {
 
         addActive(selectCustom);
         showItems(selectCustom, className);
+        changeSelectValue(selectBlock, selectCustom, className);
+    });
+}
+
+export function changeSelectValue(selectOrigin, selectCustom, className) {
+    selectCustom.addEventListener("click", function (element) {
+        let selectValue = selectCustom.querySelector(`.${className}__value`);
+        for (let option of selectOrigin.options) {
+            option.removeAttribute("selected");
+        }
+        for (let option of selectOrigin.options) {
+            if (selectValue.innerText == option.value) {
+                option.setAttribute("selected", "");
+            }
+        }
     });
 }
 
