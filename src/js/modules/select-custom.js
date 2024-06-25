@@ -28,15 +28,20 @@ export function enableCustomSelect() {
 export function changeSelectValue(selectOrigin, selectCustom, className) {
     selectCustom.addEventListener("click", function (element) {
         let selectValue = selectCustom.querySelector(`.${className}__value`);
-        for (let option of selectOrigin.options) {
-            option.removeAttribute("selected");
-        }
-        for (let option of selectOrigin.options) {
+        let selectBlock = removeSelectedOptions(selectOrigin);
+        for (let option of selectBlock.options) {
             if (selectValue.innerText == option.value) {
                 option.setAttribute("selected", "");
             }
         }
     });
+}
+
+export function removeSelectedOptions(select) {
+    for (let option of select.options) {
+        option.removeAttribute("selected");
+    }
+    return select;
 }
 
 export function createSelectCustom(className) {
