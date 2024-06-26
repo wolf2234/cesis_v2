@@ -1279,9 +1279,6 @@ body {
     z-index: 3;
     padding: 50px 0px;
 
-    @media (max-width: 760px) {
-    }
-
     &__items {
         display: flex;
 
@@ -1369,7 +1366,6 @@ body {
     height: 100%;
     width: 100%;
     z-index: 3;
-    padding: 0px 0px;
 
     .slick-arrow {
         font-size: 0px;
@@ -1398,8 +1394,11 @@ body {
         @media (max-width: 1590px) {
             top: 66%;
         }
+        @media (max-width: 1500px) {
+            top: 70%;
+        }
         @media (max-width: 1450px) {
-            top: 73%;
+            top: 72%;
         }
         @media (max-width: 1250px) {
             top: 75%;
@@ -1472,8 +1471,14 @@ body {
         height: 100%;
         z-index: 3;
 
+        @media (max-width: 1800px) {
+            padding: 7% 15px;
+        }
         @media (max-width: 1600px) {
             padding: 8% 15px;
+        }
+        @media (max-width: 1500px) {
+            padding: 7% 15px;
         }
         @media (max-width: 1450px) {
             padding: 7% 15px;
