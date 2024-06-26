@@ -1,0 +1,21 @@
+.people-loves-cesis {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    padding: 50px 0px;
+
+    &__items {
+        display: flex;
+
+        @media (max-width: 760px) {
+            flex-direction: column;
+        }
+    }
+    &__item {
+        width: 50%;
+
+        @media (max-width: 760px) {
+            width: 100%;
+        }
+    }
+}

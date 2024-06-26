@@ -1,0 +1,118 @@
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+
+    @media (max-width: 1670px) {
+        height: 100%;
+    }
+    @media (max-width: 1035px) {
+        height: 100%;
+    }
+    @media (max-width: 760px) {
+        position: fixed;
+        display: block;
+        align-items: flex-start;
+        overflow: auto;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #69d2e7;
+        padding: 70px 0px 0px 0px;
+        transition: all 0.3s ease 0s;
+    }
+
+    &.active {
+        @media (max-width: 760px) {
+            top: 0px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding: 32px 50px;
+        border-right: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        margin-left: -1px;
+
+        @media (max-width: 1670px) {
+            padding: 20px 30px;
+            height: 100%;
+        }
+        @media (max-width: 1308px) {
+            padding: 20px 30px;
+        }
+        @media (max-width: 1130px) {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            height: 100%;
+        }
+        @media (max-width: 1035px) {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            height: 100%;
+        }
+        @media (max-width: 950px) {
+            padding: 10px 15px;
+        }
+        @media (max-width: 785px) {
+            height: 100%;
+        }
+        @media (max-width: 760px) {
+            height: auto;
+            padding: 20px 33px;
+            width: 100%;
+        }
+
+        &:hover {
+            border-bottom: 4px solid #69d2e7;
+            margin-bottom: -4px;
+        }
+
+        &:last-child {
+            margin-left: auto;
+            border: none;
+
+            @media (max-width: 1670px) {
+                display: flex;
+                align-items: center;
+            }
+            @media (max-width: 1035px) {
+                display: flex;
+                align-items: center;
+            }
+            @media (max-width: 760px) {
+                margin: 0;
+                padding: 0px 33px;
+            }
+        }
+        &:last-child:hover {
+            border-bottom: none;
+            margin-bottom: 0px;
+        }
+    }
+
+    &__link {
+        color: #666;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+
+        @media (max-width: 1670px) {
+        }
+        @media (max-width: 1035px) {
+        }
+        @media (max-width: 950px) {
+            font-size: 12px;
+        }
+        @media (max-width: 760px) {
+            font-size: 16px;
+        }
+    }
+}

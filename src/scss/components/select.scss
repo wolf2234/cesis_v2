@@ -1,0 +1,65 @@
+.select-custom {
+    position: relative;
+    height: auto;
+    transition: 0.3s all ease;
+    z-index: 5;
+
+    @media (max-width: 784px) {
+        max-width: 100%;
+    }
+    @media (max-width: 760px) {
+        max-width: 100%;
+    }
+
+    &__body {
+        padding: 20px 25px;
+        color: #7f8081;
+        background-color: transparent;
+        border: 1px solid #434957;
+        outline: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-family: "OpenSans", sans-serif;
+    }
+
+    &__icon {
+        border: none;
+        border-width: 0px;
+        padding: 0px;
+        margin: 0px;
+        background-image: url("../../img/main/quote/check.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        transform: rotate(0deg);
+        width: 10px;
+        height: 5px;
+    }
+
+    &__items {
+        background-color: transparent;
+        border: 1px solid #434957;
+        border-top: 0px;
+        color: #7f8081;
+        font-weight: 300;
+        font-family: "OpenSans", sans-serif;
+    }
+
+    &__item {
+        padding: 8px 25px;
+        line-height: 24px;
+    }
+
+    &__item {
+        &:hover {
+            background-color: #c7c4c4;
+        }
+    }
+    &.is-active &__items {
+        top: 73%;
+    }
+    &.is-active &__icon {
+        margin: 0px;
+        transform: scaleY(-1);
+    }
+}

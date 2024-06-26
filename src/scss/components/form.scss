@@ -1,0 +1,98 @@
+.form {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+        @media (max-width: 784px) {
+            width: 60%;
+        }
+        @media (max-width: 760px) {
+            width: 100%;
+            padding: 0px 15px;
+        }
+    }
+
+    &__field {
+        display: flex;
+        position: relative;
+        z-index: 3;
+    }
+
+    &__image {
+        display: none;
+        position: absolute;
+        top: 30%;
+        right: 20px;
+        width: 15px;
+        height: 12px;
+        z-index: 4;
+    }
+
+    &__input {
+        padding: 20px 25px;
+        appearance: none;
+        /* прибирає стрілку */
+        color: #7f8081;
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid #434957;
+        outline: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-weight: 300;
+        font-family: "OpenSans", sans-serif;
+    }
+
+    &__input {
+        &::placeholder {
+            color: #7f8081;
+            font-weight: 300;
+            font-family: "OpenSans", sans-serif;
+        }
+        &:focus {
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        &.valid {
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        &.valid + .form__image {
+            display: inline-block;
+        }
+        &:invalid {
+            border: 1px solid red;
+        }
+        &:invalid + .form__image {
+            display: none;
+        }
+    }
+
+    &__button {
+        position: relative;
+        padding: 25px 0px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: "OpenSans", sans-serif;
+        letter-spacing: 1px;
+        border: none;
+        outline: none;
+        background: linear-gradient(
+            to right,
+            rgba(30, 87, 153, 1) 0%,
+            rgba(135, 224, 253, 1) 0%,
+            rgba(83, 203, 241, 1) 0%,
+            rgba(163, 135, 191, 1) 100%
+        );
+        z-index: 3;
+    }
+}

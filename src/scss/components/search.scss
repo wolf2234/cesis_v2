@@ -1,0 +1,27 @@
+.search {
+    position: relative;
+    padding: 30px 21px;
+    z-index: 3;
+    max-width: 140px;
+    flex: 0 0 60px;
+
+    @media (max-width: 1670px) {
+        flex: 1 1 10px;
+    }
+
+    @media (max-width: 1308px) {
+        max-width: 0px;
+    }
+
+    @media (max-width: 1035px) {
+        padding: 20px 30px 20px 0px;
+    }
+
+    &__button {
+        display: block;
+
+        @media (max-width: 1308px) {
+            display: inline-block;
+        }
+    }
+}
