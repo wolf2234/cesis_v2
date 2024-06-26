@@ -5,24 +5,9 @@
     overflow: hidden;
 }
 
-.info__container,
-.brands__container,
-.plans__container,
-.quote__container,
-.footer__container {
+.container {
     box-sizing: content-box;
     max-width: 1180px;
     margin: 0px auto;
     padding: 0px 15px; /* отступы безопасности */
-}
-
-.info__container {
-    @media (max-width: 1200px) {
-        margin: 0px 0px;
-        padding: 0px 0px;
-    }
-    @media (max-width: 760px) {
-        margin: 0px auto;
-        padding: 0px 15px;
-    }
 }
