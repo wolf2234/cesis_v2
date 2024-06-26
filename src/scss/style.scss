@@ -923,7 +923,7 @@ body {
             @media (max-width: 1700px) {
             }
             @media (max-width: 1300px) {
-                max-width: 80%;
+                max-width: 95%;
             }
             @media (max-width: 950px) {
                 max-width: 100%;
@@ -1114,8 +1114,13 @@ body {
             width: 100%;
             height: 100%;
         }
+        @media (max-width: 1300px) {
+            column-gap: 90px;
+            flex-direction: row;
+        }
         @media (max-width: 760px) {
             width: 100%;
+            flex-direction: column;
         }
     }
     &__info-item {
