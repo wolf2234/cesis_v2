@@ -30,38 +30,36 @@
     }
     .slick-dots {
         position: absolute;
-        top: 65%;
+        bottom: 20%;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         width: 100%;
 
-        @media (max-width: 1590px) {
-            top: 66%;
+        @media (max-width: 1600px) {
+            bottom: 18%;
         }
         @media (max-width: 1500px) {
-            top: 70%;
+            bottom: 15%;
         }
         @media (max-width: 1450px) {
-            top: 72%;
+            bottom: 12%;
         }
-        @media (max-width: 1250px) {
-            top: 75%;
+        @media (max-width: 1300px) {
+            bottom: 8%;
         }
-        @media (max-width: 1050px) {
-            top: 80%;
+        @media (max-width: 1200px) {
+            bottom: 5%;
         }
-        @media (max-width: 1000px) {
-            top: 85%;
-        }
-
-        @media (max-width: 822px) {
-            // top: 80%;
-        }
-
         @media (max-width: 760px) {
-            top: 80%;
+            bottom: 20%;
+        }
+        @media (max-width: 550px) {
+            bottom: 15%;
+        }
+        @media (max-width: 500px) {
+            bottom: 5%;
         }
     }
     .slick-dots li {
@@ -74,17 +72,15 @@
         background-color: rgba(163, 168, 172, 0.8);
         border-radius: 50%;
 
-        @media (max-width: 1308px) {
-            width: 35px;
-            height: 35px;
+        @media (max-width: 1650px) {
+            width: 40px;
+            height: 40px;
         }
-
-        @media (max-width: 800px) {
-            width: 35px;
-            height: 35px;
+        @media (max-width: 1200px) {
+            width: 30px;
+            height: 30px;
         }
-
-        @media (max-width: 760px) {
+        @media (max-width: 400px) {
             width: 25px;
             height: 25px;
         }
@@ -94,54 +90,29 @@
         height: 60px;
         background-color: #fff;
 
-        @media (max-width: 1308px) {
+        @media (max-width: 1650px) {
             width: 45px;
             height: 45px;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 1200px) {
+            width: 35px;
+            height: 35px;
         }
-        @media (max-width: 760px) {
+        @media (max-width: 400px) {
             width: 30px;
             height: 30px;
-            background-color: #fff;
         }
     }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+    }
     &__item {
-        background-image: url("../../img/main/people_loves_sesis/image.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
         position: relative;
-        padding: 500px 20px;
         width: 100%;
         height: 100%;
         z-index: 3;
-
-        @media (max-width: 1800px) {
-            padding: 7% 15px;
-        }
-        @media (max-width: 1600px) {
-            padding: 8% 15px;
-        }
-        @media (max-width: 1500px) {
-            padding: 7% 15px;
-        }
-        @media (max-width: 1450px) {
-            padding: 7% 15px;
-        }
-        @media (max-width: 1400px) {
-            padding: 6% 15px;
-        }
-        @media (max-width: 1050px) {
-            padding: 5% 10px;
-        }
-        @media (max-width: 1000px) {
-            padding: 4% 10px;
-        }
-        @media (max-width: 760px) {
-            width: 100%;
-            padding: 250px 20px;
-            height: 100%;
-        }
     }
 }
