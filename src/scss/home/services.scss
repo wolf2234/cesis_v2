@@ -9,8 +9,12 @@
     @media (max-width: 1300px) {
         gap: 60px;
     }
+    @media (max-width: 1200px) {
+        padding: 0px 30px;
+    }
 
     @media (max-width: 760px) {
+        padding: 0px;
         row-gap: 15px;
     }
 
