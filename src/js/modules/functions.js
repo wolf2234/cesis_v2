@@ -28,7 +28,7 @@ export function showBlock(defaultValue = 0) {
     });
 }
 
-export function addActiveByDefault(elements, defaultValue) {
+function addActiveByDefault(elements, defaultValue) {
     elements.forEach(function (element) {
         let attrElement;
         if (element.hasAttribute("data-block-link")) {
@@ -42,13 +42,13 @@ export function addActiveByDefault(elements, defaultValue) {
     });
 }
 
-export function removeActives(elements) {
+function removeActives(elements) {
     elements.forEach(function (element) {
         element.classList.remove("active");
     });
 }
 
-export function hoverElement() {
+function hoverElement() {
     const blocks = document.querySelectorAll("[data-hover-block]");
     blocks.forEach(function (block) {
         const hoverTags = block.querySelectorAll("[data-hover-attr]");
@@ -58,7 +58,7 @@ export function hoverElement() {
     });
 }
 
-export function hover(tags, currentTag) {
+function hover(tags, currentTag) {
     let attrTag = currentTag.dataset.hoverAttr;
     tags.forEach(function (tag) {
         if (attrTag == tag.dataset.hoverAttr) {
