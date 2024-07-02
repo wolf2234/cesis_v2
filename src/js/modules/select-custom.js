@@ -1,3 +1,6 @@
+/**
+ * JSDOC 
+ */
 export function enableCustomSelect() {
     let selectBlocks = document.querySelectorAll("select[data-custom-select]");
     const className = "select-custom";

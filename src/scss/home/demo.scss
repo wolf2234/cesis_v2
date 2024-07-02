@@ -218,8 +218,8 @@
     }
 
     &__text-medium {
-        font-size: 18px;
-        color: #fff;
+        font-size: 12px;
+        color: red; //#fff;
         margin-bottom: 22px;
         line-height: 40px;
         font-weight: 300;
@@ -227,7 +227,7 @@
 
         @media (max-width: 1490px) {
             margin-bottom: 20px;
-            line-height: 30px;
+            line-height: 1.5;
         }
         @media (max-width: 1035px) {
             line-height: 30px;
