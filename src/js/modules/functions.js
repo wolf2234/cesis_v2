@@ -48,7 +48,7 @@ function removeActives(elements) {
     });
 }
 
-function hoverElement() {
+export function hoverElement() {
     const blocks = document.querySelectorAll("[data-hover-block]");
     blocks.forEach(function (block) {
         const hoverTags = block.querySelectorAll("[data-hover-attr]");

@@ -13,10 +13,17 @@
         }
     }
     &__item {
-        width: 50%;
+        width: 60%;
 
         @media (max-width: 760px) {
             width: 100%;
+        }
+
+        &:last-of-type {
+            width: 40%;
+            @media (max-width: 760px) {
+                width: 100%;
+            }
         }
     }
 }

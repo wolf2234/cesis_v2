@@ -30,36 +30,42 @@
     }
     .slick-dots {
         position: absolute;
-        bottom: 20%;
+        bottom: 26%;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         width: 100%;
 
-        @media (max-width: 1600px) {
-            bottom: 18%;
+        @media (max-width: 1700px) {
+            bottom: 25%;
         }
         @media (max-width: 1500px) {
-            bottom: 15%;
+            bottom: 23%;
         }
         @media (max-width: 1450px) {
-            bottom: 12%;
+            bottom: 21%;
         }
         @media (max-width: 1300px) {
-            bottom: 8%;
+            bottom: 17%;
         }
         @media (max-width: 1200px) {
-            bottom: 5%;
+            bottom: 16%;
         }
         @media (max-width: 760px) {
             bottom: 20%;
+        }
+        @media (max-width: 600px) {
+            bottom: 18%;
         }
         @media (max-width: 550px) {
             bottom: 15%;
         }
         @media (max-width: 500px) {
-            bottom: 5%;
+            bottom: 10%;
+        }
+        @media (max-width: 450px) {
+            bottom: 6%;
         }
     }
     .slick-dots li {
@@ -80,7 +86,7 @@
             width: 30px;
             height: 30px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 412px) {
             width: 25px;
             height: 25px;
         }
@@ -98,7 +104,7 @@
             width: 35px;
             height: 35px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 412px) {
             width: 30px;
             height: 30px;
         }
