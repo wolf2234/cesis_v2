@@ -1,21 +1,34 @@
 /**
- * JSDOC
+ * Adds a custom select instead of the base one.
  */
 export function addCustomSelect() {
+    // Get all selects.
     let selectBlocks = document.querySelectorAll("select[data-custom-select]");
+
+    // Create a class of custom select.
     const className = "select-custom";
+
+    // Go through a loop for each of select.
     selectBlocks.forEach(function (selectBlock) {
+        // Create and add a custom select.
         createSelect(selectBlock, className);
     });
 }
 
+/**
+ * Create and add a custom select.
+ * @param {object} selectBlock
+ * @param {string} className
+ */
 function createSelect(selectBlock, className) {
+    // Create div elments for a custom select.
     let selectCustom = createDiv(className);
     let selectBody = createDiv(`${className}__body`);
     let selectIcon = createDiv(`${className}__icon`);
     let selectValue = createDiv(`${className}__value`, selectBlock.value);
     let selectItems = createSelectItems(selectBlock, className);
 
+    // Collection div elements in a specific order.
     const blocks = {
         0: [selectBody, "afterbegin", selectValue],
         1: [selectBody, "beforeend", selectIcon],
@@ -25,12 +38,20 @@ function createSelect(selectBlock, className) {
     };
 
     appendElements(blocks);
+
+    // Hide base select
     selectBlock.style.display = "none";
+
     addActive(selectCustom);
-    showItems(selectCustom, className);
+    putValue(selectCustom, className);
     changeSelectValue(selectBlock, selectCustom, className);
 }
 
+/**
+ * Create div element.
+ * @param {string} className
+ * @param {string} value
+ */
 function createDiv(className, value = null) {
     let element = document.createElement("div");
     element.className = className;
@@ -40,6 +61,12 @@ function createDiv(className, value = null) {
     return element;
 }
 
+/**
+ * Сhange value in base select.
+ * @param {object} selectOrigin
+ * @param {object} selectCustom
+ * @param {string} className
+ */
 function changeSelectValue(selectOrigin, selectCustom, className) {
     selectCustom.addEventListener("click", function (element) {
         let selectValue = selectCustom.querySelector(`.${className}__value`);
@@ -52,6 +79,10 @@ function changeSelectValue(selectOrigin, selectCustom, className) {
     });
 }
 
+/**
+ * Remove value in base select.
+ * @param {object} select
+ */
 function removeSelectedOptions(select) {
     for (let option of select.options) {
         option.removeAttribute("selected");
@@ -59,6 +90,11 @@ function removeSelectedOptions(select) {
     return select;
 }
 
+/**
+ * Create div items for a custom select.
+ * @param {object} select
+ * @param {string} className
+ */
 function createSelectItems(select, className) {
     let selectItems = document.createElement("div");
     selectItems.className = `${className}__items`;
@@ -68,6 +104,10 @@ function createSelectItems(select, className) {
     return selectItems;
 }
 
+/**
+ * Append elements in a specific order.
+ * @param {object} blocks
+ */
 function appendElements(blocks) {
     for (let block in blocks) {
         blocks[block][0].insertAdjacentElement(
@@ -77,13 +117,23 @@ function appendElements(blocks) {
     }
 }
 
+/**
+ * Add acticve class to the custom select to show items,
+ * when user clicks on it.
+ * @param {object} select
+ */
 function addActive(select) {
     select.addEventListener("click", function (option) {
         select.classList.toggle("is-active");
     });
 }
 
-function showItems(select, className) {
+/**
+ * Put a value to the custom select.
+ * @param {object} select
+ * @param {string} className
+ */
+function putValue(select, className) {
     const items = select
         .querySelector(`.${className}__items`)
         .querySelectorAll(`.${className}__item`);
