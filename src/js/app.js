@@ -10,9 +10,9 @@ import "./base/form.js";
 import "./base/video.js";
 
 import { showBlock } from "./modules/functions.js";
-import { enableCustomSelect } from "./modules/select-custom.js";
+import { addCustomSelect } from "./modules/select-custom.js";
 import { hoverElement } from "./modules/functions.js";
 
 showBlock(1);
-enableCustomSelect();
+addCustomSelect();
 hoverElement();

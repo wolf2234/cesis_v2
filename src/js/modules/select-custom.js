@@ -1,31 +1,43 @@
 /**
  * JSDOC
  */
-export function enableCustomSelect() {
+export function addCustomSelect() {
     let selectBlocks = document.querySelectorAll("select[data-custom-select]");
     const className = "select-custom";
     selectBlocks.forEach(function (selectBlock) {
-        let selectCustom = createSelectCustom(className);
-        let selectBody = createSelectBody(className);
-        let selectValue = createSelectValue(selectBlock, className);
-        let selectIcon = createSelectIcon(className);
-        let selectItems = createSelectItems(selectBlock, className);
-
-        const blocks = {
-            0: [selectBody, "afterbegin", selectValue],
-            1: [selectBody, "beforeend", selectIcon],
-            2: [selectCustom, "afterbegin", selectBody],
-            3: [selectCustom, "beforeend", selectItems],
-            4: [selectBlock, "afterend", selectCustom],
-        };
-
-        appendElements(blocks);
-        selectBlock.style.display = "none";
-
-        addActive(selectCustom);
-        showItems(selectCustom, className);
-        changeSelectValue(selectBlock, selectCustom, className);
+        createSelect(selectBlock, className);
     });
+}
+
+function createSelect(selectBlock, className) {
+    let selectCustom = createDiv(className);
+    let selectBody = createDiv(`${className}__body`);
+    let selectIcon = createDiv(`${className}__icon`);
+    let selectValue = createDiv(`${className}__value`, selectBlock.value);
+    let selectItems = createSelectItems(selectBlock, className);
+
+    const blocks = {
+        0: [selectBody, "afterbegin", selectValue],
+        1: [selectBody, "beforeend", selectIcon],
+        2: [selectCustom, "afterbegin", selectBody],
+        3: [selectCustom, "beforeend", selectItems],
+        4: [selectBlock, "afterend", selectCustom],
+    };
+
+    appendElements(blocks);
+    selectBlock.style.display = "none";
+    addActive(selectCustom);
+    showItems(selectCustom, className);
+    changeSelectValue(selectBlock, selectCustom, className);
+}
+
+function createDiv(className, value = null) {
+    let element = document.createElement("div");
+    element.className = className;
+    if (value) {
+        element.innerText = value;
+    }
+    return element;
 }
 
 function changeSelectValue(selectOrigin, selectCustom, className) {
@@ -45,37 +57,6 @@ function removeSelectedOptions(select) {
         option.removeAttribute("selected");
     }
     return select;
-}
-
-function createSelectCustom(className) {
-    let selectCustom = document.createElement("div");
-    selectCustom.className = className;
-    return selectCustom;
-}
-
-function createSelectBody(className) {
-    let selectBody = document.createElement("div");
-    selectBody.className = `${className}__body`;
-    return selectBody;
-}
-
-function createSelectCurrent(className) {
-    let selectCurrent = document.createElement("div");
-    selectCurrent.className = `${className}__current`;
-    return selectCurrent;
-}
-
-function createSelectValue(select, className) {
-    let selectValue = document.createElement("div");
-    selectValue.className = `${className}__value`;
-    selectValue.innerText = select.value;
-    return selectValue;
-}
-
-function createSelectIcon(className) {
-    let selectIcon = document.createElement("span");
-    selectIcon.className = `${className}__icon`;
-    return selectIcon;
 }
 
 function createSelectItems(select, className) {
