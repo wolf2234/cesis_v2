@@ -8,20 +8,9 @@
     padding: 50px 0px 100px;
     z-index: 3;
 
-    .container {
-        @media (max-width: 1200px) {
-            margin: 0px 0px;
-            padding: 0px 0px;
-        }
-        @media (max-width: 760px) {
-            margin: 0px auto;
-            padding: 0px 15px;
-        }
-    }
-
     @media (max-width: 760px) {
         display: block;
-        padding: 130px 0px;
+        padding: 15px 0px 130px;
     }
     @media (max-width: 650px) {
         padding: 20px 0px 130px;
@@ -50,8 +39,11 @@
         }
         @media (max-width: 760px) {
             font-size: 16px;
-            padding: 0px 0px;
+            padding: 0px 100px;
             min-width: 0px;
+        }
+        @media (max-width: 590px) {
+            padding: 0px 0px;
         }
         &::after {
             content: "";

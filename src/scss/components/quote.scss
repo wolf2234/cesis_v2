@@ -5,11 +5,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 900px;
 
     @media (max-width: 760px) {
         display: block;
         height: 100%;
+    }
+
+    &__container {
+        box-sizing: content-box;
+        max-width: 1180px;
+        margin: 0px auto;
+        padding: 0px 15px;
     }
 
     &::before {
@@ -75,7 +81,7 @@
         font-weight: 400;
         font-family: "Merriweather", sans-serif;
         color: #95999c;
-        width: 36%;
+        width: 40%;
         padding: 20px 0px;
         line-height: 35px;
 

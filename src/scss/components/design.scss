@@ -8,31 +8,16 @@
     background-size: 100% 100%;
 
     @media (max-width: 1600px) {
-        max-height: 300px;
-        height: 100%;
-        padding: 50px;
-    }
-
-    @media (max-width: 1035px) {
-        padding: 100px 50px;
-    }
-
-    @media (max-width: 930px) {
-        max-height: 300px;
-        height: 100%;
-        padding: 50px;
-    }
-
-    @media (max-width: 784px) {
-        max-height: 300px;
+        max-height: 400px;
         height: 100%;
         padding: 50px;
     }
 
     @media (max-width: 760px) {
-        max-height: 500px;
-        height: 100%;
         padding: 0px 45px;
+    }
+    @media (max-width: 400px) {
+        max-height: 300px;
     }
 
     &::before {
@@ -58,14 +43,25 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        padding: 80px 0px;
+        padding: 150px 0px 0px;
         height: 100%;
         width: 100%;
         z-index: 4;
 
         @media (max-width: 760px) {
             height: 100%;
-            padding: 250px 0px 0px;
+            padding: 200px 0px 50px;
+        }
+        @media (max-width: 500px) {
+            height: 100%;
+        }
+        @media (max-width: 450px) {
+            height: 100%;
+            padding: 150px 0px 0px;
+        }
+        @media (max-width: 400px) {
+            height: 100%;
+            padding: 130px 0px 0px;
         }
     }
 
@@ -84,7 +80,7 @@
         font-family: "Montserrat", sans-serif;
         margin-bottom: 20px;
 
-        @media (max-width: 870px) {
+        @media (max-width: 1200px) {
             font-size: 12px;
         }
     }
@@ -96,9 +92,9 @@
         color: #fff;
         margin-bottom: 30px;
 
-        @media (max-width: 870px) {
+        @media (max-width: 1200px) {
             font-size: 25px;
-            line-height: 35px;
+            line-height: 1.5;
         }
         @media (max-width: 760px) {
             font-size: 20px;
@@ -108,7 +104,7 @@
     &__text {
         color: #fff;
         font-size: 15px;
-        line-height: 30px;
+        line-height: 2;
         font-weight: 100;
         margin-bottom: 30px;
     }

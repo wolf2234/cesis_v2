@@ -3,6 +3,7 @@
     height: auto;
     transition: 0.3s all ease;
     z-index: 5;
+    max-width: 100%;
 
     @media (max-width: 784px) {
         max-width: 100%;
