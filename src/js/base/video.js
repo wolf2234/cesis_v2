@@ -10,7 +10,11 @@ videoButtons.forEach(function (button) {
     button.addEventListener("click", function (element) {
         // Go through a loop for each of video elements.
         videos.forEach(function (video) {
+            // Listen if user clicks on pause button.
             video.addEventListener("pause", function (el) {
+                // Check if video has an attribute 'controls' and
+                // its attribute equals the attribute of video button.
+                // If true, remove the attribute 'controls' from video and show play button.
                 if (
                     video.hasAttribute("controls") &&
                     video.dataset.parent == button.dataset.parent
@@ -19,6 +23,10 @@ videoButtons.forEach(function (button) {
                     button.style.display = "block";
                 }
             });
+            // Check if video has an attribute 'data-parent' and
+            // its attribute equals the attribute of video button.
+            // If true, set the attribute 'controls' in video, hide play button,
+            // open video in full screen and start to play.
             if (
                 video.hasAttribute("data-parent") &&
                 video.dataset.parent == button.dataset.parent
